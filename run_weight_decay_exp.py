@@ -3,28 +3,15 @@ Weight Decay Experiment Runner for Model Inversion Defenses.
 
 This script automates the process of testing Weight Decay (L2 Regularization)
 as a defense against Knowledge-Enriched Distributional Model Inversion Attacks.
-It modifies the weight_decay parameter in the configuration file dynamically, 
-trains the target models, trains the inversion-specific GANs, and evaluates 
-the attack success rate.
 """
 
 import os
 import json
 import subprocess
+import sys  # <-- 1. Add this import!
 
 def modify_weight_decay(config_path: str, model_name: str, wd_value: float) -> None:
-    """
-    Modifies the JSON configuration file to update the weight decay factor.
-    
-    Args:
-        config_path (str): The relative path to the configuration JSON file.
-        model_name (str): The name of the model whose config needs updating (e.g., 'VGG16').
-        wd_value (float): The new weight decay value to inject.
-        
-    Raises:
-        FileNotFoundError: If the config file does not exist.
-        KeyError: If the model_name is not found in the config.
-    """
+    # ... (Docstrings omitted for brevity, keep yours!) ...
     with open(config_path, 'r') as file:
         data = json.load(file)
         
@@ -35,13 +22,6 @@ def modify_weight_decay(config_path: str, model_name: str, wd_value: float) -> N
     print(f"[INFO] Updated {model_name} weight_decay to {wd_value} in {config_path}")
 
 def run_experiment(wd_factors: list, target_model: str = "VGG16") -> None:
-    """
-    Executes the full model inversion pipeline for a list of weight decay factors.
-    
-    Args:
-        wd_factors (list): A list of floats representing the weight decay factors to test.
-        target_model (str): The model architecture to target. Defaults to "VGG16".
-    """
     config_file = "./config/classify.json"
     
     for wd in wd_factors:
@@ -52,19 +32,19 @@ def run_experiment(wd_factors: list, target_model: str = "VGG16") -> None:
         # 1. Update Config
         modify_weight_decay(config_file, target_model, wd)
         
-        # 2. Train Target Model
+        # 2. Train Target Model (Notice sys.executable here)
         print(f"--> Training Target Classifier ({target_model}) with wd={wd}...")
-        subprocess.run(["python", "train_classifier.py"])
+        subprocess.run([sys.executable, "train_classifier.py"])
         
-        # 3. Train Inversion-Specific GAN
+        # 3. Train Inversion-Specific GAN (Notice sys.executable here)
         print("--> Training Inversion-Specific GAN...")
-        subprocess.run(["python", "k+1_gan.py"])
+        subprocess.run([sys.executable, "k+1_gan.py"])
         
-        # 4. Run Distributional Recovery Attack
+        # 4. Run Distributional Recovery Attack (Notice sys.executable here)
         print("--> Executing Distributional Recovery Attack...")
         log_file_name = f"results_wd_{wd}.txt"
         with open(log_file_name, "w") as log:
-            subprocess.run(["python", "recovery.py", "--model", target_model, "--improved_flag", "--dist_flag"], stdout=log)
+            subprocess.run([sys.executable, "recovery.py", "--model", target_model, "--improved_flag", "--dist_flag"], stdout=log)
         
         print(f"[SUCCESS] Finished experiment for weight decay = {wd}. Results saved to {log_file_name}.")
 

@@ -54,7 +54,7 @@ class ImageFolder(data.Dataset):
 	def load_img(self):
 		img_list = []
 		for i, img_name in enumerate(self.name_list):
-			if img_name.endswith(".png"):
+			if img_name.endswith(".jpg"):
 				path = self.img_path + "/" + img_name
 				img = PIL.Image.open(path)
 				img = img.convert('RGB')
@@ -148,7 +148,7 @@ class GrayFolder(data.Dataset):
 	def load_img(self):
 		img_list = []
 		for i, img_name in enumerate(self.name_list):
-			if img_name.endswith(".png"):
+			if img_name.endswith(".jpg"):
 				path = self.img_path + "/" + img_name
 				img = PIL.Image.open(path)
 				img = img.convert('L')
@@ -189,13 +189,13 @@ def load_mnist():
 
 	for imgs, labels in train_loader:
 		cnt += 1
-		img_name = str(cnt) + '_' + str(labels.item()) + '.png'
+		img_name = str(cnt) + '_' + str(labels.item()) + '.jpg'
 		# utils.save_tensor_images(imgs, os.path.join(mnist_img_path, img_name))
 	print("number of train files:", cnt)
 
 	for imgs, labels in test_loader:
 		cnt += 1
-		img_name = str(cnt) + '_' + str(labels.item()) + '.png'
+		img_name = str(cnt) + '_' + str(labels.item()) + '.jpg'
 		# utils.save_tensor_images(imgs, os.path.join(mnist_img_path, img_name))
 
 class celeba(data.Dataset):
@@ -227,7 +227,7 @@ class celeba(data.Dataset):
 		return image_tensor, image_label
 
 def load_attri(file_path):
-	data_path = sorted(glob.glob('./data/img_align_celeba_png/*.png'))
+	data_path = sorted(glob.glob('./data/img_align_celeba/*.jpg'))
 	print(len(data_path))
 	# get label
 	att_path = './data/list_attr_celeba.txt'

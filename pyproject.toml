@@ -3,11 +3,16 @@ name = "data-prot-assignment-1"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = "==3.8.20"
 dependencies = [
     "numpy",
     "pandas",
     "torch",
-    "matplotlib",
     "torchvision",
+    "opencv-python",
+    "Pillow",
+    "scikit-learn",
+    "tensorboardX",
+    "matplotlib",
+    "scipy"
 ]
