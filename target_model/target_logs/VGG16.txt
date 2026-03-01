@@ -1,7 +1,7 @@
 VGG16.txt
 ---------------------Training [VGG16]---------------------
 -----------------------------------------------------------------
-Running time: 2026-02-28_18-25-24
+Running time: 2026-03-01_20-53-19
 name: celeba
 train_file_path: ./data/trainset.txt
 test_file_path: ./data/testset.txt
@@ -9,7 +9,7 @@ img_path: ./data/img_align_celeba
 model_name: VGG16
 mode: reg
 n_classes: 1000
-gpus: 0,1,2,3,4,5,6,7
+gpus: 0
 epochs: 50
 batch_size: 64
 instance: 4
@@ -20,6 +20,16 @@ gamma: 0.2
 adjust_epochs: [20, 35]
 -----------------------------------------------------------------
 Load 24021 images
-Initializing data loader took 9s
+Initializing data loader took 16s
 Load 6017 images
-Initializing data loader took 2s
+Initializing data loader took 4s
+Start Training!
+Epoch:0	Time:79.62	Train Loss:5.21	Train Acc:10.99	Test Acc:22.11
+Epoch:1	Time:76.66	Train Loss:3.14	Train Acc:41.88	Test Acc:31.03
+Epoch:2	Time:75.06	Train Loss:2.65	Train Acc:58.24	Test Acc:43.68
+Epoch:3	Time:76.70	Train Loss:2.61	Train Acc:62.33	Test Acc:38.61
+Epoch:4	Time:77.34	Train Loss:2.59	Train Acc:63.81	Test Acc:38.63
+Epoch:5	Time:77.80	Train Loss:2.56	Train Acc:64.70	Test Acc:42.65
+Epoch:6	Time:75.58	Train Loss:2.51	Train Acc:66.10	Test Acc:35.11
+Epoch:7	Time:76.77	Train Loss:2.43	Train Acc:67.49	Test Acc:42.99
+Epoch:8	Time:74.04	Train Loss:2.37	Train Acc:68.80	Test Acc:49.65

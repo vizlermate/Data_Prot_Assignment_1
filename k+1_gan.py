@@ -16,6 +16,9 @@ from generator import Generator
 from classify import *
 from tensorboardX import SummaryWriter
 from datetime import datetime
+
+import glob
+
 TIMESTAMP = "{0:%Y-%m-%dT%H-%M-%S/}".format(datetime.now())
 
 def freeze(net):
@@ -60,7 +63,7 @@ utils.Tee(os.path.join(log_path, log_file), 'w')
 
 
 if __name__ == "__main__":
-    os.environ["CUDA_VISIBLE_DEVICES"] = '4, 5, 6, 7'
+    os.environ["CUDA_VISIBLE_DEVICES"] = '0'
     global args, writer
     
     file = "./config/" + dataset_name + ".json"
@@ -80,6 +83,15 @@ if __name__ == "__main__":
     if model_name_T.startswith("VGG16"):
         T = VGG16(1000)
         path_T = './target_model/target_ckp/VGG16_88.26.tar'
+        
+        
+        
+        # Find the newly trained VGG16 model dynamically
+        model_files = glob.glob('./target_models/target_ckp/VGG*.tar')
+        if not model_files:
+            raise FileNotFoundError("Could not find the trained VGG16 model in target_models/target_ckp/")
+        path_T = model_files[0]
+
     elif model_name_T.startswith('IR152'):
         T = IR152(1000)
         path_T = './target_model/target_ckp/IR152_91.16.tar'

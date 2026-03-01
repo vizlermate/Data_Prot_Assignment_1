@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     parser = ArgumentParser(description='Step2: targeted recovery')
     parser.add_argument('--model', default='VGG16', help='VGG16 | IR152 | FaceNet64')
-    parser.add_argument('--device', type=str, default='4,5,6,7', help='Device to use. Like cuda, cuda:0 or cpu')
+    parser.add_argument('--device', type=str, default='0', help='Device to use. Like cuda, cuda:0 or cpu')
     parser.add_argument('--improved_flag', action='store_true', default=False, help='use improved k+1 GAN')
     parser.add_argument('--dist_flag', action='store_true', default=False, help='use distributional recovery')
     args = parser.parse_args()
