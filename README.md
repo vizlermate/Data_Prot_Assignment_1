@@ -48,7 +48,11 @@ Zhang, Yuheng, et al. "The secret revealer: Generative model-inversion attacks a
 ## Author: Máté Vizler
 
 ## Dataset
-The dataset needs to be downloaded from Kaggle https://www.kaggle.com/datasets/kushsheth/face-vae?resource=download and the pictures placed in the data\img_align_celeba folder. 
+The dataset needs to be downloaded from Kaggle https://www.kaggle.com/datasets/kushsheth/face-vae?resource=download and the pictures placed in the data\img_align_celeba folder.
+
+These two files also need to be downloaded from the Google Drive link provided by the original owners of the codebase and placed in the correct folders.
+target_model/target_ckp/FaceNet64_88.50.tar
+target_model/target_ckp/FaceNet_95.88.tar
 
 ### How to execute the code
 To reproduce the results discussed in the report, simply run the automated experiment wrapper script from the root directory of the project:
