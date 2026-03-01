@@ -87,7 +87,7 @@ if __name__ == "__main__":
         
         
         # Find the newly trained VGG16 model dynamically
-        model_files = glob.glob('./target_models/target_ckp/VGG*.tar')
+        model_files = glob.glob('./target_model/target_ckp/VGG*.tar')
         if not model_files:
             raise FileNotFoundError("Could not find the trained VGG16 model in target_models/target_ckp/")
         path_T = model_files[0]

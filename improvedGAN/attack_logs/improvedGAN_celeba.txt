@@ -1,0 +1,15 @@
+---------------------Training [train_gan - first stage]------------------------------
+-----------------------------------------------------------------
+Running time: 2026-03-01_22-32-20
+gan_file_path: ./data/ganset.txt
+model_name: train_gan - first stage
+name: celeba
+img_path: ./data/img_align_celeba
+n_classes: 1000
+lr: 0.0002
+batch_size: 64
+z_dim: 100
+epochs: 120
+n_critic: 5
+unlabel_weight: 10
+-----------------------------------------------------------------

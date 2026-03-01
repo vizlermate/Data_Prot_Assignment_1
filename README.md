@@ -40,3 +40,18 @@ Run
 ## Reference
 <a id="1">[1]</a> 
 Zhang, Yuheng, et al. "The secret revealer: Generative model-inversion attacks against deep neural networks." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020.
+
+
+## Assignment_1 -------------------------------------------------------------------------------------
+# Data Protection Assignment 1 - Weight Decay Experiment
+
+## Author: Máté Vizler
+
+## Dataset
+The dataset needs to be downloaded from Kaggle https://www.kaggle.com/datasets/kushsheth/face-vae?resource=download and the pictures placed in the data\img_align_celeba folder. 
+
+### How to execute the code
+To reproduce the results discussed in the report, simply run the automated experiment wrapper script from the root directory of the project:
+
+```bash
+python run_weight_decay_exp.py

@@ -1,7 +1,7 @@
 VGG16.txt
 ---------------------Training [VGG16]---------------------
 -----------------------------------------------------------------
-Running time: 2026-03-01_20-53-19
+Running time: 2026-03-01_21-37-33
 name: celeba
 train_file_path: ./data/trainset.txt
 test_file_path: ./data/testset.txt
@@ -15,21 +15,63 @@ batch_size: 64
 instance: 4
 lr: 0.01
 momentum: 0.9
-weight_decay: 0.01
+weight_decay: 0.0001
 gamma: 0.2
 adjust_epochs: [20, 35]
 -----------------------------------------------------------------
 Load 24021 images
-Initializing data loader took 16s
+Initializing data loader took 32s
 Load 6017 images
 Initializing data loader took 4s
 Start Training!
-Epoch:0	Time:79.62	Train Loss:5.21	Train Acc:10.99	Test Acc:22.11
-Epoch:1	Time:76.66	Train Loss:3.14	Train Acc:41.88	Test Acc:31.03
-Epoch:2	Time:75.06	Train Loss:2.65	Train Acc:58.24	Test Acc:43.68
-Epoch:3	Time:76.70	Train Loss:2.61	Train Acc:62.33	Test Acc:38.61
-Epoch:4	Time:77.34	Train Loss:2.59	Train Acc:63.81	Test Acc:38.63
-Epoch:5	Time:77.80	Train Loss:2.56	Train Acc:64.70	Test Acc:42.65
-Epoch:6	Time:75.58	Train Loss:2.51	Train Acc:66.10	Test Acc:35.11
-Epoch:7	Time:76.77	Train Loss:2.43	Train Acc:67.49	Test Acc:42.99
-Epoch:8	Time:74.04	Train Loss:2.37	Train Acc:68.80	Test Acc:49.65
+Epoch:0	Time:77.60	Train Loss:5.11	Train Acc:11.53	Test Acc:26.70
+Epoch:1	Time:76.15	Train Loss:2.22	Train Acc:51.54	Test Acc:43.83
+Epoch:2	Time:76.30	Train Loss:1.08	Train Acc:76.00	Test Acc:61.59
+Epoch:3	Time:72.27	Train Loss:0.55	Train Acc:88.30	Test Acc:70.28
+Epoch:4	Time:63.76	Train Loss:0.26	Train Acc:95.15	Test Acc:72.79
+Epoch:5	Time:63.71	Train Loss:0.12	Train Acc:98.17	Test Acc:76.99
+Epoch:6	Time:63.89	Train Loss:0.05	Train Acc:99.43	Test Acc:80.12
+Epoch:7	Time:63.91	Train Loss:0.03	Train Acc:99.71	Test Acc:80.60
+Epoch:8	Time:63.54	Train Loss:0.02	Train Acc:99.90	Test Acc:81.98
+Epoch:9	Time:63.80	Train Loss:0.01	Train Acc:99.90	Test Acc:81.77
+Epoch:10	Time:63.89	Train Loss:0.01	Train Acc:99.92	Test Acc:82.36
+Epoch:11	Time:63.70	Train Loss:0.01	Train Acc:99.97	Test Acc:82.75
+Epoch:12	Time:63.78	Train Loss:0.01	Train Acc:99.95	Test Acc:82.70
+Epoch:13	Time:63.58	Train Loss:0.01	Train Acc:99.95	Test Acc:83.06
+Epoch:14	Time:63.75	Train Loss:0.01	Train Acc:99.97	Test Acc:83.44
+Epoch:15	Time:63.72	Train Loss:0.01	Train Acc:99.97	Test Acc:83.36
+Epoch:16	Time:63.62	Train Loss:0.01	Train Acc:99.97	Test Acc:83.38
+Epoch:17	Time:63.96	Train Loss:0.01	Train Acc:99.97	Test Acc:83.03
+Epoch:18	Time:63.73	Train Loss:0.01	Train Acc:99.97	Test Acc:83.10
+Epoch:19	Time:64.28	Train Loss:0.01	Train Acc:99.97	Test Acc:83.31
+Epoch:20	Time:63.82	Train Loss:0.01	Train Acc:99.96	Test Acc:83.16
+Epoch:21	Time:63.52	Train Loss:0.01	Train Acc:99.97	Test Acc:83.59
+Epoch:22	Time:64.10	Train Loss:0.01	Train Acc:99.97	Test Acc:83.46
+Epoch:23	Time:63.80	Train Loss:0.01	Train Acc:99.97	Test Acc:83.54
+Epoch:24	Time:63.76	Train Loss:0.01	Train Acc:99.96	Test Acc:83.78
+Epoch:25	Time:63.70	Train Loss:0.01	Train Acc:99.97	Test Acc:83.61
+Epoch:26	Time:63.91	Train Loss:0.00	Train Acc:99.98	Test Acc:83.56
+Epoch:27	Time:63.49	Train Loss:0.00	Train Acc:99.98	Test Acc:83.71
+Epoch:28	Time:63.54	Train Loss:0.00	Train Acc:99.97	Test Acc:83.91
+Epoch:29	Time:63.71	Train Loss:0.01	Train Acc:99.97	Test Acc:83.81
+Epoch:30	Time:63.69	Train Loss:0.00	Train Acc:99.99	Test Acc:83.96
+Epoch:31	Time:63.45	Train Loss:0.00	Train Acc:99.96	Test Acc:83.91
+Epoch:32	Time:63.58	Train Loss:0.00	Train Acc:99.97	Test Acc:84.01
+Epoch:33	Time:63.75	Train Loss:0.00	Train Acc:99.98	Test Acc:84.01
+Epoch:34	Time:63.52	Train Loss:0.00	Train Acc:99.97	Test Acc:83.91
+Epoch:35	Time:63.40	Train Loss:0.00	Train Acc:99.98	Test Acc:83.94
+Epoch:36	Time:63.75	Train Loss:0.00	Train Acc:99.98	Test Acc:83.91
+Epoch:37	Time:63.56	Train Loss:0.00	Train Acc:99.98	Test Acc:84.28
+Epoch:38	Time:63.68	Train Loss:0.00	Train Acc:99.98	Test Acc:84.01
+Epoch:39	Time:63.65	Train Loss:0.00	Train Acc:99.98	Test Acc:84.14
+Epoch:40	Time:63.74	Train Loss:0.00	Train Acc:99.98	Test Acc:84.23
+Epoch:41	Time:63.58	Train Loss:0.00	Train Acc:99.97	Test Acc:84.18
+Epoch:42	Time:64.23	Train Loss:0.00	Train Acc:99.98	Test Acc:84.19
+Epoch:43	Time:63.86	Train Loss:0.00	Train Acc:99.98	Test Acc:84.33
+Epoch:44	Time:63.88	Train Loss:0.00	Train Acc:99.97	Test Acc:84.28
+Epoch:45	Time:63.81	Train Loss:0.00	Train Acc:99.98	Test Acc:84.24
+Epoch:46	Time:63.66	Train Loss:0.00	Train Acc:99.99	Test Acc:84.29
+Epoch:47	Time:64.12	Train Loss:0.00	Train Acc:99.99	Test Acc:84.38
+Epoch:48	Time:63.57	Train Loss:0.00	Train Acc:99.98	Test Acc:84.42
+Epoch:49	Time:63.60	Train Loss:0.00	Train Acc:99.97	Test Acc:84.39
+Best Acc:84.42

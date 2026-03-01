@@ -18,6 +18,8 @@ from attack import inversion, dist_inversion
 from generator import Generator
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
 
+import glob
+
 
 # logger
 def get_logger():
@@ -73,7 +75,9 @@ if __name__ == "__main__":
 
     if args.model.startswith("VGG16"):
         T = VGG16(1000)
-        path_T = './target_model/target_ckp/VGG16_88.26.tar'
+        model_files = glob.glob('./target_model/target_ckp/VGG*.tar')
+        path_T = model_files[0]
+
     elif args.model.startswith('IR152'):
         T = IR152(1000)
         path_T = './target_model/target_ckp/IR152_91.16.tar'
